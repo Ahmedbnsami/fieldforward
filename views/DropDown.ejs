@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="DropDown.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1>Agriculture Advisory Dashboard</h1>
+            <!-- Advice Section -->
+            <div class="advice-section flashcard">
+                <h2>Your Advisory</h2>
+                <ul id="advice-list">
+                    <% if (advice && advice.length) { %>
+                        <% advice.forEach(function(item) { %>
+                            <li><%= item %></li>
+                        <% }); %>
+                    <% } else { %>
+                        <li>No advice available.</li>
+                    <% } %>
+                </ul>
+            </div>
+
+            <!-- Flashcard 1: Crop Selection & Rotation -->
+            <div class="flashcard">
+                <h2>Crop Selection & Rotation</h2>
+                <p>Drought Forecast: <span class="status on">Recommend</span></p>
+                <p>Vegetation Growth: <span class="status on">Stable</span></p>
+                <p class="tip">Tip: Include nitrogen-fixing plants to restore soil health.</p>
+            </div>
+
+            <!-- Flashcard 2: Fertilization & Nutrient Management -->
+            <div class="flashcard">
+                <h2>Fertilization & Nutrient Management</h2>
+                <p>Soil Moisture: <span class="status percentage">75%</span></p>
+                <p>Rainfall Forecast: <span class="status percentage">80%</span></p>
+                <p class="tip">Tip: Use slow-release fertilizers in dry conditions.</p>
+            </div>
+
+            <!-- Flashcard 3: Harvest Timing -->
+            <div class="flashcard">
+                <h2>Harvest Timing</h2>
+                <p>Precipitation Risk: <span class="status percentage">60%</span></p>
+                <p>ET Level: <span class="status percentage">50%</span></p>
+                <p class="tip">Tip: Harvest early if heavy rain is forecasted.</p>
+            </div>
+
+            <!-- Flashcard 4: Pest & Disease Management -->
+            <div class="flashcard">
+                <h2>Pest & Disease Management</h2>
+                <p>Pest Outbreak Risk: <span class="status percentage">70%</span></p>
+                <p>Fungal Growth Risk: <span class="status on">High</span></p>
+                <p class="tip">Tip: Preventive treatments recommended in high moisture conditions.</p>
+            </div>
+
+            <!-- Flashcard 5: Soil Health & Erosion Control -->
+            <div class="flashcard">
+                <h2>Soil Health & Erosion Control</h2>
+                <p>Flood Risk: <span class="status percentage">65%</span></p>
+                <p>Erosion Control Needed: <span class="status on">Yes</span></p>
+                <p class="tip">Tip: Apply mulching or cover crops to protect soil.</p>
+            </div>
+
+            <!-- Flashcard 6: Water Storage & Conservation -->
+            <div class="flashcard">
+                <h2>Water Storage & Conservation</h2>
+                <p>Drought Risk: <span class="status percentage">75%</span></p>
+                <p>Water Storage Suggested: <span class="status on">Yes</span></p>
+                <p class="tip">Tip: Implement rainwater harvesting for long-term irrigation.</p>
+            </div>
+
+            <!-- Flashcard 7: Livestock Management -->
+            <div class="flashcard">
+                <h2>Livestock Management</h2>
+                <p>Heat Stress Risk: <span class="status percentage">80%</span></p>
+                <p>Air Quality: <span class="status on">Poor</span></p>
+                <p class="tip">Tip: Increase water availability and provide shade.</p>
+            </div>
+
+            <!-- Flashcard 8: Post-Harvest Handling -->
+            <div class="flashcard">
+                <h2>Post-Harvest Handling</h2>
+                <p>Humidity Risk: <span class="status percentage">65%</span></p>
+                <p>Mold Risk: <span class="status on">High</span></p>
+                <p class="tip">Tip: Use increased ventilation to prevent mold.</p>
+            </div>
+            <div class="flashcard">
+                <h2>Water-Flow Handling</h2>
+                <p>Pump State: <span class="status percentage">ON</span></p>
+                <p class="tip">Tip: Use the pump state to know the when the Water-Flow increase</p>
+            </div>
+        </div>
+    </main>
+
+    <nav>
+        <div id="nav-links">
+            <a class="nav-link" href="/">
+                <h2 class="nav-link-label rubik-font">Home</h2>
+                <img class="nav-link-image"
+                    src="Main.PNG" />
+            </a>
+            <a class="nav-link" href="/Dashboard">
+                <h2 class="nav-link-label rubik-font">Dashboard</h2>
+                <img class="nav-link-image"
+                    src="DropDown.PNG" />
+            </a>
+            <a class="nav-link" href="/recommend-crop">
+                <h2 class="nav-link-label rubik-font">Recommend Crop</h2>
+                <img class="nav-link-image"
+                    src="RecommendCrop.PNG" />
+            </a>
+        </div>
+    </nav>
+
+    <button id="nav-toggle" type="button" onclick="toggleNav()">
+        <i class="open fa-light fa-bars-staggered"></i>
+        <i class="close fa-light fa-xmark-large"></i>
+    </button>
+
+    <script>
+        const toggleNav = () => {
+            document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
+        }
+        alert('Some of the flashcards in page are static and made just as a prototype for giving examples.')
+    </script>
+</body>
+
+</html>

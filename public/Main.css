@@ -1,0 +1,99 @@
+/* Base styles */
+
+.crop-selection {
+    background-color: #e9f5e5;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .crop-selection h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6a8e4e;
+    margin-bottom: 20px;
+  }
+  
+  /* Dropdown styling */
+  .dropdown {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .dropdown:hover, 
+  .dropdown:focus {
+    border-color: #6a8e4e;
+  }
+  
+  option {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* Dropdown arrow customization (if needed) */
+  .dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDExIDYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExIDBsLTUuNSA2TDAgMCIgZmlsbD0iIzAwN2JmZiIvPjwvc3ZnPg==') no-repeat right 12px center;
+    background-size: 10px;
+  }
+  
+
+body {
+    background-color: #e9f5e5;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    color: #6a8e4e;
+    margin-top: 30px;
+}
+
+.form-container {
+    margin: 20px auto;
+    width: 300px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #6a8e4e;
+    border-radius: 8px;
+}
+
+button {
+    width: 50%;
+    padding: 12px;
+    background-color: #6a8e4e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    margin-top: 50px;
+}
+
+button:hover {
+    background-color: #88b06e;
+    cursor: pointer;
+}

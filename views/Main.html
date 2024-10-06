@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Farm Manager</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+
+<body>
+
+
+
+
+    <div class="container">
+        <h1>Welcome to Farm Manager</h1>
+        <section class="crop-selection">
+            <h1>Select Your Crop</h1>
+            <select id="crop-dropdown" class="dropdown">
+                <option value="wheat">Wheat</option>
+                <option value="rice">Rice</option>
+                <option value="corn">Corn</option>
+                <option value="tomatoes">Tomatoes</option>
+            </select>
+        </section>
+
+        <button onclick="submitCrop()" id="submitBT" type="submit" >Submit</button>
+
+    </div>
+
+    <script>
+        function submitCrop() {
+            const crop = document.getElementById('crop-dropdown').value;
+            window.location.href = `/Dashboard?crop=${crop}`;
+        }
+    </script>
+
+</body>
+
+</html>

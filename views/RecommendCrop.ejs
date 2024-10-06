@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommend Crop</title>
+
+    <link rel="stylesheet" href="RecommendCrop.css">
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <h1>Crop Recommendation System</h1>
+            <p>We are fetching the best crops for your location based on environmental data.</p>
+
+            <!-- Loading spinner -->
+            <div class="loader"></div>
+
+            <!-- Data section that will be populated with API response -->
+            <div class="data-section">
+                <p id="crop-recommendation"></p>
+                <p id="environmental-data"></p>
+            </div>
+
+            <p class="error-message" id="error-message"></p>
+        </div>
+    </main>
+    <nav>
+        <div id="nav-links">
+            <a class="nav-link" href="/">
+                <h2 class="nav-link-label rubik-font">Home</h2>
+                <img class="nav-link-image" src="Main.PNG" />
+            </a>
+            <a class="nav-link" href="/Dashboard">
+                <h2 class="nav-link-label rubik-font">Dashboard</h2>
+                <img class="nav-link-image" src="DropDown.PNG" />
+            </a>
+            <a class="nav-link" href="/recommend-crop">
+                <h2 class="nav-link-label rubik-font">Recommend Crop</h2>
+                <img class="nav-link-image"
+                    src="RecommendCrop.PNG" />
+            </a>
+        </div>
+    </nav>
+
+    <button id="nav-toggle" type="button" onclick="toggleNav()">
+        <i class="open fa-light fa-bars-staggered"></i>
+        <i class="close fa-light fa-xmark-large"></i>
+    </button>
+
+    <script>
+        const toggleNav = () => {
+            document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
+        }
+        // When the page loads, automatically get the location
+        window.onload = function () {
+            if (navigator.geolocation) {
+                // Get the user's position
+                navigator.geolocation.getCurrentPosition(sendPositionToServer, showError);
+            } else {
+                showError({ code: -1, message: "Geolocation is not supported by this browser." });
+            }
+        };
+
+        function sendPositionToServer(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Send latitude and longitude to the server via a POST request
+            fetch('/recommend-crop', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    lat: latitude,
+                    lon: longitude
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('.loader').style.display = 'none'; // Hide the loader
+                    document.querySelector('.data-section').style.display = 'block'; // Show the data section
+
+                    // Handle the received crop recommendations
+                    document.getElementById('crop-recommendation').innerHTML = `<strong>Recommended Crops:</strong> ${data.recommendedCrops.join(', ')}`;
+                    document.getElementById('environmental-data').innerHTML = `<strong>Environmental Data:</strong> ${JSON.stringify(data.environmentalData)}`;
+                })
+                .catch(error => {
+                    showError({ code: -2, message: "Failed to fetch data from server." });
+                });
+        }
+
+        function showError(error) {
+            document.querySelector('.loader').style.display = 'none'; // Hide the loader
+            const errorMessageElement = document.getElementById('error-message');
+
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    errorMessageElement.innerText = "You denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    errorMessageElement.innerText = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    errorMessageElement.innerText = "The request to get user location timed out.";
+                    break;
+                case -1:
+                    errorMessageElement.innerText = error.message;
+                    break;
+                case -2:
+                    errorMessageElement.innerText = error.message;
+                    break;
+                default:
+                    errorMessageElement.innerText = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

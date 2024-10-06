@@ -1,0 +1,1042 @@
+[
+  {
+    "name": "Sorghum",
+    "tempRange": [
+      20,
+      50
+    ],
+    "soilMoistureRange": [
+      10,
+      30
+    ],
+    "rainfallRange": [
+      0,
+      700
+    ],
+    "evapotranspirationRange": [
+      5,
+      20
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Millet",
+    "tempRange": [
+      25,
+      40
+    ],
+    "soilMoistureRange": [
+      15,
+      30
+    ],
+    "rainfallRange": [
+      0,
+      500
+    ],
+    "evapotranspirationRange": [
+      4,
+      8
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Pigeon Peas",
+    "tempRange": [
+      20,
+      35
+    ],
+    "soilMoistureRange": [
+      10,
+      40
+    ],
+    "rainfallRange": [
+      300,
+      800
+    ],
+    "evapotranspirationRange": [
+      3,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Chickpeas",
+    "tempRange": [
+      15,
+      35
+    ],
+    "soilMoistureRange": [
+      10,
+      25
+    ],
+    "rainfallRange": [
+      250,
+      600
+    ],
+    "evapotranspirationRange": [
+      4,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Cowpeas",
+    "tempRange": [
+      20,
+      35
+    ],
+    "soilMoistureRange": [
+      15,
+      30
+    ],
+    "rainfallRange": [
+      400,
+      700
+    ],
+    "evapotranspirationRange": [
+      4,
+      8
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Quinoa",
+    "tempRange": [
+      15,
+      30
+    ],
+    "soilMoistureRange": [
+      10,
+      40
+    ],
+    "rainfallRange": [
+      300,
+      500
+    ],
+    "evapotranspirationRange": [
+      3,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Amaranth",
+    "tempRange": [
+      20,
+      35
+    ],
+    "soilMoistureRange": [
+      10,
+      40
+    ],
+    "rainfallRange": [
+      250,
+      600
+    ],
+    "evapotranspirationRange": [
+      4,
+      8
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Wheat",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      30,
+      70
+    ],
+    "rainfallRange": [
+      300,
+      700
+    ],
+    "evapotranspirationRange": [
+      3,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Rice",
+    "tempRange": [
+      20,
+      35
+    ],
+    "soilMoistureRange": [
+      50,
+      90
+    ],
+    "rainfallRange": [
+      500,
+      1000
+    ],
+    "evapotranspirationRange": [
+      6,
+      8
+    ],
+    "floodTolerance": true
+  },
+  {
+    "name": "Corn",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      50,
+      80
+    ],
+    "rainfallRange": [
+      400,
+      800
+    ],
+    "evapotranspirationRange": [
+      4,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Tomatoes",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      60,
+      85
+    ],
+    "rainfallRange": [
+      300,
+      600
+    ],
+    "evapotranspirationRange": [
+      4,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Cotton",
+    "tempRange": [
+      25,
+      35
+    ],
+    "soilMoistureRange": [
+      50,
+      80
+    ],
+    "rainfallRange": [
+      400,
+      900
+    ],
+    "evapotranspirationRange": [
+      6,
+      9
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Barley",
+    "tempRange": [
+      10,
+      20
+    ],
+    "soilMoistureRange": [
+      40,
+      70
+    ],
+    "rainfallRange": [
+      250,
+      600
+    ],
+    "evapotranspirationRange": [
+      3,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Peas",
+    "tempRange": [
+      12,
+      25
+    ],
+    "soilMoistureRange": [
+      60,
+      80
+    ],
+    "rainfallRange": [
+      400,
+      700
+    ],
+    "evapotranspirationRange": [
+      4,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Soybeans",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      50,
+      85
+    ],
+    "rainfallRange": [
+      400,
+      800
+    ],
+    "evapotranspirationRange": [
+      5,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Potatoes",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      60,
+      80
+    ],
+    "rainfallRange": [
+      300,
+      500
+    ],
+    "evapotranspirationRange": [
+      4,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Onions",
+    "tempRange": [
+      10,
+      25
+    ],
+    "soilMoistureRange": [
+      50,
+      75
+    ],
+    "rainfallRange": [
+      250,
+      500
+    ],
+    "evapotranspirationRange": [
+      3,
+      5
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Garlic",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      50,
+      80
+    ],
+    "rainfallRange": [
+      250,
+      500
+    ],
+    "evapotranspirationRange": [
+      3,
+      5
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Lettuce",
+    "tempRange": [
+      10,
+      20
+    ],
+    "soilMoistureRange": [
+      70,
+      90
+    ],
+    "rainfallRange": [
+      300,
+      600
+    ],
+    "evapotranspirationRange": [
+      2,
+      4
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Cabbage",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      60,
+      80
+    ],
+    "rainfallRange": [
+      300,
+      600
+    ],
+    "evapotranspirationRange": [
+      4,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Carrots",
+    "tempRange": [
+      10,
+      25
+    ],
+    "soilMoistureRange": [
+      70,
+      85
+    ],
+    "rainfallRange": [
+      300,
+      600
+    ],
+    "evapotranspirationRange": [
+      3,
+      5
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Strawberries",
+    "tempRange": [
+      10,
+      25
+    ],
+    "soilMoistureRange": [
+      60,
+      80
+    ],
+    "rainfallRange": [
+      300,
+      500
+    ],
+    "evapotranspirationRange": [
+      3,
+      5
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Grapes",
+    "tempRange": [
+      15,
+      30
+    ],
+    "soilMoistureRange": [
+      40,
+      70
+    ],
+    "rainfallRange": [
+      200,
+      400
+    ],
+    "evapotranspirationRange": [
+      3,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Bananas",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      60,
+      90
+    ],
+    "rainfallRange": [
+      500,
+      1200
+    ],
+    "evapotranspirationRange": [
+      7,
+      10
+    ],
+    "floodTolerance": true
+  },
+  {
+    "name": "Apples",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      50,
+      75
+    ],
+    "rainfallRange": [
+      400,
+      800
+    ],
+    "evapotranspirationRange": [
+      4,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Oranges",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      50,
+      80
+    ],
+    "rainfallRange": [
+      400,
+      800
+    ],
+    "evapotranspirationRange": [
+      5,
+      8
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Pomegranates",
+    "tempRange": [
+      18,
+      30
+    ],
+    "soilMoistureRange": [
+      40,
+      75
+    ],
+    "rainfallRange": [
+      300,
+      600
+    ],
+    "evapotranspirationRange": [
+      4,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Mangoes",
+    "tempRange": [
+      24,
+      35
+    ],
+    "soilMoistureRange": [
+      50,
+      85
+    ],
+    "rainfallRange": [
+      500,
+      1200
+    ],
+    "evapotranspirationRange": [
+      6,
+      9
+    ],
+    "floodTolerance": true
+  },
+  {
+    "name": "Peaches",
+    "tempRange": [
+      18,
+      30
+    ],
+    "soilMoistureRange": [
+      40,
+      70
+    ],
+    "rainfallRange": [
+      300,
+      600
+    ],
+    "evapotranspirationRange": [
+      4,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Dates",
+    "tempRange": [
+      30,
+      45
+    ],
+    "soilMoistureRange": [
+      20,
+      40
+    ],
+    "rainfallRange": [
+      50,
+      200
+    ],
+    "evapotranspirationRange": [
+      6,
+      10
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Olives",
+    "tempRange": [
+      15,
+      30
+    ],
+    "soilMoistureRange": [
+      30,
+      60
+    ],
+    "rainfallRange": [
+      200,
+      500
+    ],
+    "evapotranspirationRange": [
+      4,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Lentils",
+    "tempRange": [
+      15,
+      30
+    ],
+    "soilMoistureRange": [
+      40,
+      70
+    ],
+    "rainfallRange": [
+      250,
+      500
+    ],
+    "evapotranspirationRange": [
+      3,
+      5
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Chickpeas",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      40,
+      60
+    ],
+    "rainfallRange": [
+      300,
+      500
+    ],
+    "evapotranspirationRange": [
+      3,
+      5
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Alfalfa",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      40,
+      70
+    ],
+    "rainfallRange": [
+      500,
+      800
+    ],
+    "evapotranspirationRange": [
+      6,
+      8
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Cucumbers",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      60,
+      85
+    ],
+    "rainfallRange": [
+      300,
+      500
+    ],
+    "evapotranspirationRange": [
+      5,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Pumpkins",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      60,
+      80
+    ],
+    "rainfallRange": [
+      400,
+      600
+    ],
+    "evapotranspirationRange": [
+      5,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Chili Peppers",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      50,
+      70
+    ],
+    "rainfallRange": [
+      300,
+      500
+    ],
+    "evapotranspirationRange": [
+      4,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Sweet Potatoes",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      50,
+      80
+    ],
+    "rainfallRange": [
+      400,
+      800
+    ],
+    "evapotranspirationRange": [
+      5,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Spinach",
+    "tempRange": [
+      10,
+      20
+    ],
+    "soilMoistureRange": [
+      60,
+      90
+    ],
+    "rainfallRange": [
+      300,
+      600
+    ],
+    "evapotranspirationRange": [
+      2,
+      4
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Beetroot",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      60,
+      80
+    ],
+    "rainfallRange": [
+      300,
+      600
+    ],
+    "evapotranspirationRange": [
+      3,
+      5
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Watermelons",
+    "tempRange": [
+      20,
+      35
+    ],
+    "soilMoistureRange": [
+      40,
+      70
+    ],
+    "rainfallRange": [
+      200,
+      400
+    ],
+    "evapotranspirationRange": [
+      5,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Papayas",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      50,
+      80
+    ],
+    "rainfallRange": [
+      500,
+      1200
+    ],
+    "evapotranspirationRange": [
+      7,
+      9
+    ],
+    "floodTolerance": true
+  },
+  {
+    "name": "Melons",
+    "tempRange": [
+      25,
+      35
+    ],
+    "soilMoistureRange": [
+      30,
+      60
+    ],
+    "rainfallRange": [
+      200,
+      400
+    ],
+    "evapotranspirationRange": [
+      5,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Coconut",
+    "tempRange": [
+      25,
+      35
+    ],
+    "soilMoistureRange": [
+      50,
+      90
+    ],
+    "rainfallRange": [
+      1000,
+      2000
+    ],
+    "evapotranspirationRange": [
+      8,
+      12
+    ],
+    "floodTolerance": true
+  },
+  {
+    "name": "Pineapples",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      50,
+      80
+    ],
+    "rainfallRange": [
+      500,
+      1000
+    ],
+    "evapotranspirationRange": [
+      7,
+      10
+    ],
+    "floodTolerance": true
+  },
+  {
+    "name": "Quinoa",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      40,
+      70
+    ],
+    "rainfallRange": [
+      200,
+      400
+    ],
+    "evapotranspirationRange": [
+      4,
+      6
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Teff",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      40,
+      70
+    ],
+    "rainfallRange": [
+      400,
+      600
+    ],
+    "evapotranspirationRange": [
+      5,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Amaranth",
+    "tempRange": [
+      15,
+      30
+    ],
+    "soilMoistureRange": [
+      50,
+      80
+    ],
+    "rainfallRange": [
+      400,
+      800
+    ],
+    "evapotranspirationRange": [
+      5,
+      7
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Buckwheat",
+    "tempRange": [
+      15,
+      25
+    ],
+    "soilMoistureRange": [
+      40,
+      70
+    ],
+    "rainfallRange": [
+      200,
+      400
+    ],
+    "evapotranspirationRange": [
+      3,
+      5
+    ],
+    "floodTolerance": false
+  },
+  {
+    "name": "Cassava",
+    "tempRange": [
+      20,
+      35
+    ],
+    "soilMoistureRange": [
+      50,
+      80
+    ],
+    "rainfallRange": [
+      800,
+      1200
+    ],
+    "evapotranspirationRange": [
+      6,
+      8
+    ],
+    "floodTolerance": true
+  },
+  {
+    "name": "Taro",
+    "tempRange": [
+      20,
+      30
+    ],
+    "soilMoistureRange": [
+      70,
+      90
+    ],
+    "rainfallRange": [
+      500,
+      1000
+    ],
+    "evapotranspirationRange": [
+      6,
+      8
+    ],
+    "floodTolerance": true
+  },
+  {
+    "name": "Yams",
+    "tempRange": [
+      25,
+      35
+    ],
+    "soilMoistureRange": [
+      60,
+      80
+    ],
+    "rainfallRange": [
+      800,
+      1200
+    ],
+    "evapotranspirationRange": [
+      6,
+      8
+    ],
+    "floodTolerance": false
+  }
+]
