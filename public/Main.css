@@ -1,60 +1,73 @@
-/* Base styles */
+:root {
+    /* Colors */
+    --color-bg: #e9f5e5;
+    --color-primary: #6a8e4e;
+    --color-primary-hover: #88b06e;
+    --color-border: #ccc;
+    --color-white: #fff;
 
+    /* Fonts */
+    --font-family-base: 'Amatic SC', cursive;
 
+    /* Font sizes */
+    --font-size-h1-small: 24px;
+    --font-size-h1-large: 3em;
+    --font-size-dropdown: 16px;
+    --font-size-button: 1.2em;
+}
 
 .crop-selection {
-    background-color: #e9f5e5;
+    background-color: var(--color-bg);
     padding: 20px;
     border-radius: 10px;
     max-width: 400px;
     margin: 0 auto;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-  
-  .crop-selection h1 {
-    font-size: 24px;
+}
+
+.crop-selection h1 {
+    font-size: var(--font-size-h1-small);
     font-weight: bold;
-    color: #6a8e4e;
+    color: var(--color-primary);
     margin-bottom: 20px;
-  }
-  
-  /* Dropdown styling */
-  .dropdown {
+}
+
+/* Dropdown styling */
+.dropdown {
     width: 100%;
     padding: 12px;
-    font-size: 16px;
-    border: 2px solid #ccc;
+    font-size: var(--font-size-dropdown);
+    border: 2px solid var(--color-border);
     border-radius: 8px;
     outline: none;
-    background-color: #fff;
+    background-color: var(--color-white);
     cursor: pointer;
     transition: border-color 0.3s;
-  }
-  
-  .dropdown:hover, 
-  .dropdown:focus {
-    border-color: #6a8e4e;
-  }
-  
-  option {
+}
+
+.dropdown:hover, 
+.dropdown:focus {
+    border-color: var(--color-primary);
+}
+
+option {
     padding: 10px;
-    font-size: 16px;
-  }
-  
-  /* Dropdown arrow customization (if needed) */
-  .dropdown {
+    font-size: var(--font-size-dropdown);
+}
+
+/* Dropdown arrow customization (if needed) */
+.dropdown {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDExIDYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExIDBsLTUuNSA2TDAgMCIgZmlsbD0iIzAwN2JmZiIvPjwvc3ZnPg==') no-repeat right 12px center;
     background-size: 10px;
-  }
-  
+}
 
 body {
-    background-color: #e9f5e5;
-    font-family: 'Amatic SC', cursive;
+    background-color: var(--color-bg);
+    font-family: var(--font-family-base);
     text-align: center;
     margin: 0;
     padding: 0;
@@ -65,8 +78,8 @@ body {
 }
 
 h1 {
-    font-size: 3em;
-    color: #6a8e4e;
+    font-size: var(--font-size-h1-large);
+    color: var(--color-primary);
     margin-top: 30px;
 }
 
@@ -80,22 +93,22 @@ input[type="text"], input[type="password"] {
     padding: 12px;
     margin: 8px 0;
     display: inline-block;
-    border: 2px solid #6a8e4e;
+    border: 2px solid var(--color-primary);
     border-radius: 8px;
 }
 
 button {
     width: 50%;
     padding: 12px;
-    background-color: #6a8e4e;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     border: none;
     border-radius: 8px;
-    font-size: 1.2em;
+    font-size: var(--font-size-button);
     margin-top: 50px;
 }
 
 button:hover {
-    background-color: #88b06e;
+    background-color: var(--color-primary-hover);
     cursor: pointer;
 }

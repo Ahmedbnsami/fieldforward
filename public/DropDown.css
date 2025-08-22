@@ -1,57 +1,62 @@
+:root {
+    --color-black: black;
+    --color-white: white;
+    --color-green: green;
+    --color-green-accent: #2b9348;
+    --color-blue-accent: rgb(85, 130, 149);
+    --color-light: rgb(246, 231, 224);
+    --color-purple: rgb(94, 106, 210);
+    --color-red: rgb(239, 83, 80);
+    --color-dark: rgba(40, 40, 40, 0.9);
+    --color-dark-hover: rgb(40, 40, 40);
+    --color-gray: #f5f5f5;
+    --color-gray-dark: #333;
+    --color-gray-mid: #555;
+    --color-orange: #f4a261;
+    --color-skeleton: #e0e0e0;
+    --font-main: Arial, sans-serif;
+    --font-alt: "Rubik", sans-serif;
+    --font-size-xl: 2em;
+    --font-size-lg: 1.75rem;
+    --font-size-md: 1.5em;
+    --font-size-base: 1.25rem;
+    --font-size-normal: 1em;
+    --font-size-sm: 0.9em;
+}
+
 body {
     height: 100vh;
     width: 100vw;
     margin: 0px;
-    background-color: black;
+    background-color: var(--color-black);
     overflow-x: hidden;
 }
 
 .rubik-font {
-    font-family: "Rubik", sans-serif;
+    font-family: var(--font-alt);
 }
-
-/* main {
-    background-image: url("https://images.unsplash.com/photo-1666032234128-abc3e45bd1dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80");
-    background-position: center 0%;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    z-index: 2;
-    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
-  } */
 
 main {
     padding-bottom: 100px;
 }
 
-
 nav {
     height: 50vh;
     width: 100%;
     position: fixed;
-    /* left: 0px; */
     bottom: 0px;
     z-index: 1;
     overflow: hidden;
-    /* width: 100vw; */
-    background: linear-gradient(transparent 0%, transparent 40%, white 100%);
+    background: linear-gradient(transparent 0%, transparent 40%, var(--color-white) 100%);
 }
 
 #nav-links {
     display: flex;
     gap: clamp(1rem, 2vw, 2rem);
     margin-top: clamp(4rem, 4vw, 5rem);
-
-    /* position: fixed; */
-    /* top: 0; */
-    /* bottom: 0; */
-    /* position: absolute;
-    bottom: 0; */
     padding: 0rem clamp(1rem, 2vw, 2rem);
     transform: translateY(70%) scale(0.9);
     transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
-
 }
 
 body[data-nav="true"] {
@@ -67,8 +72,8 @@ body[data-nav="true"]>nav>#nav-links {
 }
 
 #nav-links>.nav-link>.nav-link-label {
-    color: green;
-    font-size: 1.25rem;
+    color: var(--color-green);
+    font-size: var(--font-size-base);
     margin: 0rem;
     text-transform: uppercase;
 }
@@ -89,7 +94,7 @@ body[data-nav="true"]>nav>#nav-links {
     left: 50%;
     bottom: 1rem;
     transform: translateX(-50%);
-    background-color: #2b9348;
+    background-color: var(--color-green-accent);
     border: none;
     border-radius: 5rem;
     outline: none;
@@ -109,7 +114,7 @@ body[data-nav="true"]>nav>#nav-links {
 }
 
 body[data-nav="true"]>#nav-toggle {
-    background-color: rgb(85, 130, 149);
+    background-color: var(--color-blue-accent);
 }
 
 body:not([data-nav="true"])>#nav-toggle:hover>.open {
@@ -122,8 +127,8 @@ body:not([data-nav="true"])>#nav-toggle:hover>.open {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0.9);
-    color: rgb(246, 231, 224);
-    font-size: 1.75rem;
+    color: var(--color-light);
+    font-size: var(--font-size-lg);
     opacity: 0;
     transition: transform, opacity;
     transition-timing-function: ease;
@@ -135,14 +140,12 @@ body[data-nav="true"]>#nav-toggle>.close {
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* -- YouTube Link Styles -- */
-
 #source-link {
     top: 60px;
 }
 
 #source-link>i {
-    color: rgb(94, 106, 210);
+    color: var(--color-purple);
 }
 
 #yt-link {
@@ -150,13 +153,13 @@ body[data-nav="true"]>#nav-toggle>.close {
 }
 
 #yt-link>i {
-    color: rgb(239, 83, 80);
+    color: var(--color-red);
 }
 
 .meta-link {
     align-items: center;
     backdrop-filter: blur(3px);
-    background-color: rgba(40, 40, 40, 0.9);
+    background-color: var(--color-dark);
     border-radius: 6px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -171,7 +174,7 @@ body[data-nav="true"]>#nav-toggle>.close {
 }
 
 .meta-link:hover {
-    background-color: rgb(40, 40, 40);
+    background-color: var(--color-dark-hover);
 }
 
 .meta-link>i,
@@ -181,13 +184,10 @@ body[data-nav="true"]>#nav-toggle>.close {
 }
 
 .meta-link>span {
-    color: white;
-    font-family: "Rubik", sans-serif;
+    color: var(--color-white);
+    font-family: var(--font-alt);
     transition: color 600ms;
 }
-
-
-/* DropDown Styles */
 
 * {
     margin: 0;
@@ -196,17 +196,17 @@ body[data-nav="true"]>#nav-toggle>.close {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: var(--font-main);
+    background-color: var(--color-gray);
+    color: var(--color-gray-dark);
     padding: 20px;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 2em;
-    color: #2b9348;
+    font-size: var(--font-size-xl);
+    color: var(--color-green-accent);
 }
 
 .container {
@@ -215,7 +215,7 @@ h1 {
 }
 
 .flashcard {
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -231,20 +231,20 @@ h1 {
 }
 
 .flashcard h2 {
-    font-size: 1.5em;
-    color: #2b9348;
+    font-size: var(--font-size-md);
+    color: var(--color-green-accent);
     margin-bottom: 10px;
 }
 
 .flashcard p {
-    font-size: 1em;
+    font-size: var(--font-size-normal);
     margin-bottom: 10px;
 }
 
 .flashcard .tip {
-    font-size: 0.9em;
+    font-size: var(--font-size-sm);
     font-style: italic;
-    color: #555;
+    color: var(--color-gray-mid);
 }
 
 .status {
@@ -252,64 +252,60 @@ h1 {
 }
 
 .on {
-    color: green;
+    color: var(--color-green);
 }
 
 .off {
-    color: red;
+    color: var(--color-red);
 }
 
 .percentage {
-    color: #f4a261;
+    color: var(--color-orange);
 }
 
-
-    /* --- Skeleton + Fade-in (additive) --- */
-        .skeleton {
-            position: relative;
-            background: #e0e0e0;
-            overflow: hidden;
-        }
-        .skeleton::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -150px;
-            height: 100%;
-            width: 150px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
-            animation: shimmer 1.2s infinite;
-        }
-        @keyframes shimmer {
-            0%   { left: -150px; }
-            100% { left: 100%; }
-        }
-        .skeleton-text {
-            display: inline-block;
-            height: 1em;
-            min-width: 80px;
-            border-radius: 6px;
-            vertical-align: middle;
-        }
-        .skeleton-block {
-            display: block;
-            height: 1.1em;
-            width: 100%;
-            border-radius: 8px;
-            margin: 6px 0;
-        }
-        /* Keep your "loading..." text but mask it when skeleton is active */
-        .skeleton-mask {
-            color: transparent !important;
-        }
-        /* Card appear animation (no change to your hover logic) */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(8px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .flashcard.appear {
-            animation: fadeUp .45s ease both;
-        }
+.skeleton {
+    position: relative;
+    background: var(--color-skeleton);
+    overflow: hidden;
+}
+.skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+    animation: shimmer 1.2s infinite;
+}
+@keyframes shimmer {
+    0%   { left: -150px; }
+    100% { left: 100%; }
+}
+.skeleton-text {
+    display: inline-block;
+    height: 1em;
+    min-width: 80px;
+    border-radius: 6px;
+    vertical-align: middle;
+}
+.skeleton-block {
+    display: block;
+    height: 1.1em;
+    width: 100%;
+    border-radius: 8px;
+    margin: 6px 0;
+}
+.skeleton-mask {
+    color: transparent !important;
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.flashcard.appear {
+    animation: fadeUp .45s ease both;
+}
 
 @media (max-width: 768px) {
     .flashcard {
