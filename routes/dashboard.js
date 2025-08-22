@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   const selectedCrop = req.cookies.crop
-  const { lat, lon, irrigation } = req.body;
+  const { lat, lon, irrigation } = req.body
   console.log(selectedCrop, lat, lon, irrigation)
   if (!lat || !lon) {
     return res.status(400).send('Latitude and Longitude are required.');
