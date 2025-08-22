@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommend Crop</title>
-
     <link rel="stylesheet" href="RecommendCrop.css">
 </head>
-
 <body>
-
     <main>
         <div class="container">
             <h1>Crop Recommendation System</h1>
             <p>We are fetching the best crops for your location based on environmental data.</p>
 
-            <!-- Loading spinner -->
             <div class="loader"></div>
 
-            <!-- Data section that will be populated with API response -->
-            <div class="data-section">
+            <div class="data-section" style="display:none;">
                 <p id="crop-recommendation"></p>
                 <p id="environmental-data"></p>
             </div>
@@ -40,8 +34,7 @@
             </a>
             <a class="nav-link" href="/recommend-crop">
                 <h2 class="nav-link-label rubik-font">Recommend Crop</h2>
-                <img class="nav-link-image"
-                    src="RecommendCrop.PNG" />
+                <img class="nav-link-image" src="RecommendCrop.PNG" />
             </a>
         </div>
     </nav>
@@ -55,10 +48,9 @@
         const toggleNav = () => {
             document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
         }
-        // When the page loads, automatically get the location
+        
         window.onload = function () {
             if (navigator.geolocation) {
-                // Get the user's position
                 navigator.geolocation.getCurrentPosition(sendPositionToServer, showError);
             } else {
                 showError({ code: -1, message: "Geolocation is not supported by this browser." });
@@ -69,7 +61,12 @@
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            // Send latitude and longitude to the server via a POST request
+            // Prompt farmer for irrigation value
+            let irrigation = prompt("Enter irrigation value in mm (leave blank if none):");
+            if (irrigation === null || irrigation.trim() === "") {
+                irrigation = null;
+            }
+
             fetch('/recommend-crop', {
                 method: 'POST',
                 headers: {
@@ -77,15 +74,14 @@
                 },
                 body: JSON.stringify({
                     lat: latitude,
-                    lon: longitude
+                    lon: longitude,
+                    irrigation: irrigation
                 }),
             })
                 .then(response => response.json())
                 .then(data => {
-                    document.querySelector('.loader').style.display = 'none'; // Hide the loader
-                    document.querySelector('.data-section').style.display = 'block'; // Show the data section
-
-                    // Handle the received crop recommendations
+                    document.querySelector('.loader').style.display = 'none';
+                    document.querySelector('.data-section').style.display = 'block';
                     document.getElementById('crop-recommendation').innerHTML = `<strong>Recommended Crops:</strong> ${data.recommendedCrops.join(', ')}`;
                     document.getElementById('environmental-data').innerHTML = `<strong>Environmental Data:</strong> ${JSON.stringify(data.environmentalData)}`;
                 })
@@ -95,7 +91,7 @@
         }
 
         function showError(error) {
-            document.querySelector('.loader').style.display = 'none'; // Hide the loader
+            document.querySelector('.loader').style.display = 'none';
             const errorMessageElement = document.getElementById('error-message');
 
             switch (error.code) {
@@ -109,8 +105,6 @@
                     errorMessageElement.innerText = "The request to get user location timed out.";
                     break;
                 case -1:
-                    errorMessageElement.innerText = error.message;
-                    break;
                 case -2:
                     errorMessageElement.innerText = error.message;
                     break;
@@ -120,7 +114,5 @@
             }
         }
     </script>
-
 </body>
-
 </html>

@@ -10,14 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "csv-parser": "^3.0.0",
-    "dotenv": "^16.4.5",
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^0.21.4",
+    "cookie-parser": "^1.4.7",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.6.1",
     "ejs": "^3.1.10",
-    "express": "^4.20.0",
-    "fs": "0.0.1-security",
-    "http": "0.0.1-security",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
     "node-fetch": "^2.7.0",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.10",
+    "openmeteo": "^1.2.0"
   }
 }

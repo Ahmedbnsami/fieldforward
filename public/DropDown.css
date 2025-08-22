@@ -263,6 +263,54 @@ h1 {
     color: #f4a261;
 }
 
+
+    /* --- Skeleton + Fade-in (additive) --- */
+        .skeleton {
+            position: relative;
+            background: #e0e0e0;
+            overflow: hidden;
+        }
+        .skeleton::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -150px;
+            height: 100%;
+            width: 150px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+            animation: shimmer 1.2s infinite;
+        }
+        @keyframes shimmer {
+            0%   { left: -150px; }
+            100% { left: 100%; }
+        }
+        .skeleton-text {
+            display: inline-block;
+            height: 1em;
+            min-width: 80px;
+            border-radius: 6px;
+            vertical-align: middle;
+        }
+        .skeleton-block {
+            display: block;
+            height: 1.1em;
+            width: 100%;
+            border-radius: 8px;
+            margin: 6px 0;
+        }
+        /* Keep your "loading..." text but mask it when skeleton is active */
+        .skeleton-mask {
+            color: transparent !important;
+        }
+        /* Card appear animation (no change to your hover logic) */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .flashcard.appear {
+            animation: fadeUp .45s ease both;
+        }
+
 @media (max-width: 768px) {
     .flashcard {
         padding: 15px;
