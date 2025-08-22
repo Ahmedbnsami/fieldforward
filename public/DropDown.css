@@ -50,6 +50,15 @@ nav {
     background: linear-gradient(transparent 0%, transparent 40%, var(--color-white) 100%);
 }
 
+#nav-links {
+    display: flex;
+    gap: clamp(1rem, 2vw, 2rem);
+    margin-top: clamp(4rem, 4vw, 5rem);
+    padding: 0rem clamp(1rem, 2vw, 2rem);
+    transform: translateY(70%) scale(0.9);
+    transition: transform 500ms cubic-bezier(.13, .53, .38, .97);
+}
+
 body[data-nav="true"] {
     overflow-y: hidden;
 }
@@ -58,132 +67,51 @@ body[data-nav="true"]>nav>#nav-links {
     transform: translateY(0%) scale(1);
 }
 
-/* Updated nav links layout and style */
-#nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    position: fixed;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100%);
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0;
-    z-index: 1000;
-    max-width: 90vw;
-}
-
-#nav-links.active {
-    transform: translateX(-50%) translateY(0%);
-    opacity: 1;
-}
-
-#nav-links .nav-link {
-    text-align: center;
+#nav-links>.nav-link {
     text-decoration: none;
-    color: var(--color-green-accent);
-    display: block;
-    background-color: var(--color-white);
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#nav-links .nav-link:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+#nav-links>.nav-link>.nav-link-label {
+    color: var(--color-green);
+    font-size: var(--font-size-base);
+    margin: 0rem;
+    text-transform: uppercase;
 }
 
-#nav-links .nav-link .nav-link-image {
-    width: 90%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 12px;
-    margin: 0.5rem auto 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    object-fit: contain;
-}
-
-#nav-links.active .nav-link .nav-link-image {
-    animation: rise 0.4s ease forwards;
-}
-
-@keyframes rise {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Horizontal layout for large screens */
-@media (min-width: 1024px) {
-    #nav-links {
-        flex-direction: row;
-        gap: 2rem;
-        bottom: 80px;
-    }
-
-    #nav-links .nav-link {
-        flex: 1 1 30%;
-        max-width: 400px;
-    }
-
-    #nav-links .nav-link .nav-link-image {
-        width: 100%;
-        height: auto;
-        margin: 0 auto;
-        object-fit: contain;
-    }
+#nav-links>.nav-link>.nav-link-image {
+    width: max(20vw, 400px);
+    aspect-ratio: 1.8 / 1;
+    border-radius: 0.5rem;
+    margin-top: 0.75rem;
+    object-fit: cover;
 }
 
 #nav-toggle {
+    height: 5rem;
+    width: 5rem;
     position: fixed;
-    bottom: 1rem;
+    z-index: 19000;
     left: 50%;
+    bottom: 1rem;
     transform: translateX(-50%);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
     background-color: var(--color-green-accent);
     border: none;
+    border-radius: 5rem;
+    outline: none;
+    box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
     cursor: pointer;
-    z-index: 1001;
+    transition: transform, background-color;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
 }
 
-#nav-toggle.active {
-    background-color: var(--color-blue-accent);
+#nav-toggle:hover {
+    transform: translateX(-50%) scale(1.04);
 }
 
-#nav-toggle i {
-    color: white;
-    font-size: 1.5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
+#nav-toggle:active {
+    transform: translateX(-50%) scale(0.96);
 }
-
-#nav-toggle .open {
-    opacity: 1;
-}
-
-#nav-toggle.active .open {
-    opacity: 0;
-}
-
-#nav-toggle .close {
-    opacity: 0;
-}
-
-#nav-toggle.active .close {
-    opacity: 1;
-} 
 
 body[data-nav="true"]>#nav-toggle {
     background-color: var(--color-blue-accent);
@@ -192,6 +120,19 @@ body[data-nav="true"]>#nav-toggle {
 body:not([data-nav="true"])>#nav-toggle:hover>.open {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+}
+
+#nav-toggle>i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    color: var(--color-light);
+    font-size: var(--font-size-lg);
+    opacity: 0;
+    transition: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
 }
 
 body[data-nav="true"]>#nav-toggle>.close {
