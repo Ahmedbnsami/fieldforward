@@ -22,32 +22,37 @@
             <p class="error-message" id="error-message"></p>
         </div>
     </main>
-    <nav>
-        <div id="nav-links">
-            <a class="nav-link" href="/">
-                <h2 class="nav-link-label rubik-font">Home</h2>
-                <img class="nav-link-image" src="Main.PNG" />
-            </a>
-            <a class="nav-link" href="/Dashboard">
-                <h2 class="nav-link-label rubik-font">Dashboard</h2>
-                <img class="nav-link-image" src="DropDown.PNG" />
-            </a>
-            <a class="nav-link" href="/recommend-crop">
-                <h2 class="nav-link-label rubik-font">Recommend Crop</h2>
-                <img class="nav-link-image" src="RecommendCrop.PNG" />
-            </a>
-        </div>
-    </nav>
+<nav>
+    <div id="nav-links">
+        <a class="nav-link" href="/">
+            <h2 class="nav-link-label rubik-font">Home</h2>
+            <image class="nav-link-image skeleton" src="Main.PNG"/>  
+        </a>
+        <a class="nav-link" href="/Dashboard">
+            <h2 class="nav-link-label rubik-font">Dashboard</h2>
+            <image class="nav-link-image skeleton" src="DropDown.PNG"/>
+        </a>
+        <a class="nav-link" href="/recommend-crop">
+            <h2 class="nav-link-label rubik-font">Recommend Crop</h2>
+            <image class="nav-link-image skeleton" src="RecommendCrop.PNG"/>
+        </a>
+    </div>
+</nav>
 
-    <button id="nav-toggle" type="button" onclick="toggleNav()">
-        <i class="open fa-light fa-bars-staggered"></i>
-        <i class="close fa-light fa-xmark-large"></i>
-    </button>
+<button id="nav-toggle" type="button">
+    <i class="open fa-light fa-bars-staggered"></i>
+    <i class="close fa-light fa-xmark-large"></i>
+</button>
 
-    <script>
-        const toggleNav = () => {
-            document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
-        }
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    navToggle.classList.toggle('active');
+  });
+
         
         window.onload = function () {
             if (navigator.geolocation) {
