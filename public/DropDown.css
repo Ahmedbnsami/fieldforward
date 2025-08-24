@@ -30,13 +30,55 @@
 
 /* Layout */
 body {
-  background: var(--bg-dark);
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg), var(--bg-light));
+  background-size: 300% 300%;
+  animation: gradientShift 20s ease infinite;
   color: var(--text);
   font-family: var(--ff);
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
   padding: 20px;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animated glowing dots background */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.12) 2px, transparent 2px);
+    background-size: 50px 50px;
+    animation: drift 30s linear infinite;
+    z-index: 0;
+    opacity: 0.4; /* more visible */
+}
+
+@keyframes drift {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
+
+/* Mouse glow effect */
+body::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--highlight) 0%, transparent 70%);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0.15;
+    transition: top 0.1s linear, left 0.1s linear;
+    z-index: 1;
 }
 
 /* Dashboard title */
@@ -54,6 +96,7 @@ h1 {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr;
+  margin-bottom: 200px;
 }
 
 /* Flashcards */
@@ -75,7 +118,7 @@ h1 {
 
 .flashcard h2 {
   font: var(--h1);
-  color: var(--primary);
+  color: var(--text);
   margin-bottom: 0.75rem;
 }
 
@@ -141,7 +184,7 @@ h1 {
 
 /* ===== NAVIGATION (restored old behavior) ===== */
 nav {
-  height: 50vh;
+  height: 30vh;
   width: 100%;
   position: fixed;
   bottom: 0;
