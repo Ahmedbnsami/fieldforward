@@ -1,14 +1,19 @@
 :root {
   /* Core Colors */
-  --bg-dark: hsl(124 100% 1%);
-  --bg: hsl(119 100% 3%);
-  --bg-light: hsl(116 98% 6%);
-  --text: hsl(111 100% 89%);
-  --text-muted: hsl(111 33% 64%);
-  --highlight: hsl(112 49% 31%);
-  --border: hsl(110 96% 17%);
-  --primary: hsl(112 41% 62%);
-  --secondary: hsl(290 58% 74%);
+--bg-dark: hsl(111 58% 86%);
+  --bg: hsl(111 93% 91%);
+  --bg-light: hsl(111 100% 97%);
+  --text: hsl(129 100% 1%);
+  --text-muted: hsl(110 96% 17%);
+  --highlight: hsl(111 100% 93%);
+  --border: hsl(112 36% 42%);
+  --border-muted: hsl(112 34% 55%);
+  --primary: hsl(110 96% 17%);
+  --secondary: hsl(290 46% 30%);
+  --danger: hsl(7 51% 41%);
+  --warning: hsl(53 100% 15%);
+  --success: hsl(161 100% 17%);
+  --info: hsl(217 54% 44%);
   --gradient: linear-gradient(145deg, var(--bg-light), var(--bg));
   --gradient-hover: linear-gradient(145deg, var(--bg), var(--bg-light));
 
@@ -141,7 +146,7 @@ h1 {
 /* Skeletons */
 .skeleton {
   position: relative;
-  background: var(--bg-light);
+  background: var(--bg-dark);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -152,8 +157,8 @@ h1 {
   left: -150px;
   height: 100%;
   width: 150px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  animation: shimmer 1.2s infinite;
+  background: linear-gradient(90deg, transparent, var(--bg), transparent);
+  animation: shimmer 2s infinite;
 }
 @keyframes shimmer {
   0%   { left: -150px; }
