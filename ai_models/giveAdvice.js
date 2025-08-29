@@ -6,10 +6,11 @@ dotenv.config({ path: __dirname + '/../config/.env.local' })
 const genAI = new GoogleGenerativeAI(process.env.API_KEY)
 
 async function giveAdviceAI(crop, temp, soilmoisture, precipitation, evapotranspiration, irrigation) {
-  const model = genAI.getGenerativeModel({model: "gemini-2.5-flash"})
+  const model = genAI.getGenerativeModel({model: "gemini-1.5-flash"})
   
   const prompt = `You are an agricultural decision support system. 
   You are an agriculture advisory system. Output only valid JSON, with no explanations, no markdown, and no code blocks.
+  Don't add any text except the json code.
 Your job is to take in environmental inputs and return structured JSON advice for farmers. 
 Always use the given environmental values when relevant, and do not invent new numbers. 
 Do not add explanations or extra text outside of the JSON. 
@@ -75,9 +76,10 @@ JSON Response Format:
   
   const result = await model.generateContent(prompt)
   const response = await result.response
-  const text = response.text()
+  let text = response.text()
   
   try {
+    text = text.replace(/```json|```/g, "").trim()
     const parsed = JSON.parse(text)
     return parsed
   } catch (err) {
