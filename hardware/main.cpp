@@ -25,7 +25,7 @@
 
 // --------- CONFIG (edit to match your environment) ---------
 // WiFi credentials and WebSocket server details
-static const char* WIFI_SSID = "Amera";       // <-- your SSID (or hotspot SSID)
+static const char* WIFI_SSID = "Wifi";       // <-- your SSID (or hotspot SSID)
 static const char* WIFI_PASS = "12341234";   // <-- your WiFi / hotspot password
 static const char* WS_HOST   = "10.77.84.55"; // <-- your server IP (the machine running the websocket server)
 static const uint16_t WS_PORT = 3000;          // <-- server port
