@@ -21,6 +21,7 @@ router.get('/', (req, res) => {
 
   if (cropObj) {
     const [soilMoistureMin, soilMoistureMax] = cropObj.soilMoistureRange;
+    console.log('hi')
 
     const wss = req.app.get("wss");
     if (wss) {

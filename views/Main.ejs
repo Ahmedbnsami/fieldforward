@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | Farm Manager</title>
+  <title>Login | Smart Terra</title>
   <link rel="stylesheet" href="Main.css">
 </head>
 
@@ -27,6 +27,7 @@
   </div>
 
   <script>
+    alert("Make Sure You Allowed The Location On Your Device.")
     function submitCrop() {
       const crop = document.getElementById('crop-dropdown').value;
       window.location.href = `/Dashboard?crop=${crop}`;

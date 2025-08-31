@@ -17,6 +17,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', async (req, res) => {
   const crops = JSON.parse(fs.readFileSync('./json_files/crops.json', 'utf-8'));
+  
   res.render('Main', { crops });
 });
 
