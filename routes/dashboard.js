@@ -15,14 +15,24 @@ router.get('/', (req, res) => {
   res.cookie('crop', Crop);
   res.render('DropDown');
 
-  // 🔥 send crop to hardware via WebSocket
-  const wss = req.app.get("wss");
-  if (wss) {
-    wss.clients.forEach((client) => {
-      if (client.readyState === 1) { // OPEN
-        client.send(JSON.stringify({ crop: Crop }));
-      }
-    });
+  //  send soil moisture limits instead of crop name
+  const cropsData = readCropData();
+  const cropObj = cropsData.find(c => c.name === Crop);
+
+  if (cropObj) {
+    const [soilMoistureMin, soilMoistureMax] = cropObj.soilMoistureRange;
+
+    const wss = req.app.get("wss");
+    if (wss) {
+      wss.clients.forEach((client) => {
+        if (client.readyState === 1) { // OPEN
+          client.send(JSON.stringify({
+            soilMoistureMin,
+            soilMoistureMax
+          }));
+        }
+      });
+    }
   }
 });
 
