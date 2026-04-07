@@ -12,29 +12,32 @@ const readCropData = () => {
 
 router.get('/', (req, res) => {
   const Crop = req.query.crop;
-  res.cookie('crop', Crop);
-  res.render('DropDown');
 
-  //  send soil moisture limits instead of crop name
-  const cropsData = readCropData();
-  const cropObj = cropsData.find(c => c.name === Crop);
+  if (Crop) {
+    res.cookie('crop', Crop);
 
-  if (cropObj) {
-    const [soilMoistureMin, soilMoistureMax] = cropObj.soilMoistureRange;
-    console.log('hi')
+    // Send soil moisture limits to ESP32 via WebSocket
+    const cropsData = readCropData();
+    const cropObj = cropsData.find(c => c.name === Crop);
 
-    const wss = req.app.get("wss");
-    if (wss) {
-      wss.clients.forEach((client) => {
-        if (client.readyState === 1) { // OPEN
-          client.send(JSON.stringify({
-            soilMoistureMin,
-            soilMoistureMax
-          }));
-        }
-      });
+    if (cropObj) {
+      const [soilMoistureMin, soilMoistureMax] = cropObj.soilMoistureRange;
+
+      const wss = req.app.get("wss");
+      if (wss) {
+        wss.clients.forEach((client) => {
+          if (client.readyState === 1) {
+            client.send(JSON.stringify({
+              soilMoistureMin,
+              soilMoistureMax
+            }));
+          }
+        });
+      }
     }
   }
+
+  res.json({ status: 'ok' });
 });
 
 router.post('/', async (req, res) => {
@@ -43,7 +46,7 @@ router.post('/', async (req, res) => {
   console.log(selectedCrop, lat, lon, irrigation);
 
   if (!lat || !lon) {
-    return res.status(400).send('Latitude and Longitude are required.');
+    return res.status(400).json({ error: 'Latitude and Longitude are required.' });
   }
 
   try {
@@ -66,7 +69,7 @@ router.post('/', async (req, res) => {
     res.json({ Advice });
   } catch (error) {
     console.error('Error:', error);
-    res.status(500).send('Error processing your request.');
+    res.status(500).json({ error: 'Error processing your request.' });
   }
 });
 

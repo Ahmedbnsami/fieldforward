@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const http = require('http');
 const WebSocket = require('ws');
 
@@ -10,19 +11,20 @@ const port = 3000;
 const dashboardRouter = require('./routes/dashboard.js');
 const recommendCropsRouter = require('./routes/recommend-crop.js');
 
+// Middleware
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
 
-app.get('/', async (req, res) => {
+// API: Serve crops list
+app.get('/api/crops', (req, res) => {
   const crops = JSON.parse(fs.readFileSync('./json_files/crops.json', 'utf-8'));
-  
-  res.render('Main', { crops });
+  res.json(crops);
 });
 
-app.use('/Dashboard', dashboardRouter);
-app.use('/recommend-crop', recommendCropsRouter);
+// API routes
+app.use('/api/dashboard', dashboardRouter);
+app.use('/api/recommend-crop', recommendCropsRouter);
 
 // Create one HTTP server for Express + WebSocket
 const server = http.createServer(app);

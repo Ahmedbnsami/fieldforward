@@ -5,14 +5,14 @@ const { getCurrentWeather } = require('../api_data/getCurrentWeather.js')
 const recommendCrop = require('../api_data/recommendCrop');
 
 router.get('/', (req, res) => {
-  res.render('RecommendCrop'); 
+  res.json({ status: 'ok' });
 });
 
 router.post('/', async (req, res) => {
   const { lat, lon, irrigation } = req.body;
 
   if (!lat || !lon) {
-    return res.status(400).send('Latitude and Longitude are required.');
+    return res.status(400).json({ error: 'Latitude and Longitude are required.' });
   }
   
   try {
@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
     });
   } catch (error) {
     console.error('Error:', error);
-    res.status(500).send('Error processing your request.');
+    res.status(500).json({ error: 'Error processing your request.' });
   }
 });
 

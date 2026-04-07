@@ -31,7 +31,9 @@ async function getCurrentWeather({ latitude, longitude }) {
   const todaySoil = h.soil_moisture_0_to_10cm.filter((_, i) =>
     h.time[i].startsWith(today)
   );
-  const soilMoistureAvg = todaySoil.reduce((a, b) => a + b, 0) / todaySoil.length;
+  const soilMoistureAvg = todaySoil.length > 0
+    ? todaySoil.reduce((a, b) => a + b, 0) / todaySoil.length
+    : null;
 
   // Compute mean daily temperature
   const tempAvg = (d.temperature_2m_max[0] + d.temperature_2m_min[0]) / 2;

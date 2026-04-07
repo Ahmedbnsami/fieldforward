@@ -1,0 +1,47 @@
+/* ===== FLASHCARD ===== */
+.flashcard {
+  background: var(--gradient);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  opacity: 0.7;
+}
+
+.flashcard.appear {
+  animation: fadeUp 0.5s ease forwards;
+  opacity: 1;
+}
+
+.flashcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  background: var(--gradient-hover);
+}
+
+.flashcard h2 {
+  font: var(--h1);
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.flashcard p {
+  font: var(--p);
+  margin-bottom: 0.5rem;
+}
+
+.flashcard .tip {
+  font: var(--p2);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ===== ADVICE SECTION ===== */
+.advice-section p {
+  font: var(--p);
+  line-height: 1.7;
+}

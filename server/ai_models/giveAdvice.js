@@ -6,7 +6,7 @@ dotenv.config({ path: __dirname + '/../config/.env.local' })
 const genAI = new GoogleGenerativeAI(process.env.API_KEY)
 
 async function giveAdviceAI(crop, temp, soilmoisture, precipitation, evapotranspiration, irrigation) {
-  const model = genAI.getGenerativeModel({model: "gemini-1.5-flash"})
+  const model = genAI.getGenerativeModel({model: "gemini-2.5-flash"})
   
   const prompt = `You are an agricultural decision support system. 
   You are an agriculture advisory system. Output only valid JSON, with no explanations, no markdown, and no code blocks.

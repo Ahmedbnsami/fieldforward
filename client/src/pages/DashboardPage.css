@@ -1,0 +1,73 @@
+/* ===== DASHBOARD PAGE ===== */
+.dashboard-page {
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 120px;
+}
+
+/* Title */
+.dashboard-page h1 {
+  text-align: center;
+  font: var(--h0);
+  color: var(--primary);
+  margin: 1rem auto 1rem;
+}
+
+.crop-indicator {
+  text-align: center;
+  font: var(--p);
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.crop-indicator strong {
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+/* Container grid */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+/* Error state */
+.dashboard-error {
+  background: linear-gradient(145deg, hsl(0 80% 96%), hsl(0 60% 92%));
+  border: 1px solid var(--danger);
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.dashboard-error p {
+  font: var(--p);
+  color: var(--danger);
+}
+
+/* Desktop 2-column grid */
+@media (min-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Advice section spans full width */
+  .dashboard-container .advice-section {
+    grid-column: 1 / -1;
+  }
+
+  .dashboard-page h1 {
+    grid-column: 1 / -1;
+  }
+
+  .crop-indicator {
+    grid-column: 1 / -1;
+  }
+
+  .dashboard-error {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,175 @@
+/* ===== DESIGN TOKENS ===== */
+:root {
+  /* Core Colors */
+  --bg-dark: hsl(111 58% 86%);
+  --bg: hsl(111 93% 91%);
+  --bg-light: hsl(111 100% 97%);
+  --text: hsl(129 100% 1%);
+  --text-muted: hsl(110 96% 17%);
+  --highlight: hsl(111 100% 93%);
+  --border: hsl(112 36% 42%);
+  --border-muted: hsl(112 34% 55%);
+  --primary: hsl(110 96% 17%);
+  --secondary: hsl(290 46% 30%);
+  --danger: hsl(7 51% 41%);
+  --warning: hsl(53 100% 15%);
+  --success: hsl(161 100% 17%);
+  --info: hsl(217 54% 44%);
+
+  --gradient: linear-gradient(145deg, var(--bg-light), var(--bg));
+  --gradient-hover: linear-gradient(145deg, var(--bg), var(--bg-light));
+
+  /* Typography */
+  --ff: "Inter", sans-serif;
+  --ff-alt: "Rubik", sans-serif;
+
+  --h0: bold 2.5rem/1.2em var(--ff);
+  --h1: bold 1.6rem/1.3em var(--ff);
+  --h2: 600 1.25rem/1.4em var(--ff);
+  --p: 1.05rem/1.6em var(--ff);
+  --p2: 0.95rem/1.5em var(--ff);
+  --footer: 0.9rem/1.4em var(--ff);
+
+  --icon-lg: 1.75rem;
+}
+
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== GLOBAL BODY ===== */
+body {
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg), var(--bg-light));
+  background-size: 300% 300%;
+  animation: gradientShift 20s ease infinite;
+  color: var(--text);
+  font-family: var(--ff);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Smooth animated background gradient */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animated glowing dots background */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 2px, transparent 2px);
+  background-size: 50px 50px;
+  animation: drift 30s linear infinite;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to   { background-position: 100px 100px; }
+}
+
+/* Mouse glow effect */
+body::before {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--highlight) 0%, transparent 70%);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0.15;
+  transition: top 0.1s linear, left 0.1s linear;
+  z-index: 1;
+}
+
+/* ===== SHARED UTILITIES ===== */
+#root {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+}
+
+/* ===== SKELETON SYSTEM ===== */
+.skeleton {
+  position: relative;
+  background: var(--bg-dark);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, var(--bg), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0%   { left: -150px; }
+  100% { left: 100%; }
+}
+
+.skeleton-text {
+  display: inline-block;
+  height: 1em;
+  min-width: 80px;
+  margin: 0.3rem 0;
+}
+
+.skeleton-block {
+  display: block;
+  height: 1.1em;
+  width: 100%;
+  margin: 0.4rem 0;
+}
+
+.skeleton-mask {
+  color: transparent !important;
+}
+
+/* ===== FADE-UP ANIMATION ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+/* ===== SCROLLBAR STYLING ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border);
+}
