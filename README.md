@@ -149,8 +149,6 @@ Includes:
 /data          Crop requirement data  
 /models        MongoDB schemas  
 /routes        API endpoints  
-/controllers   Business logic  
-/utils         Data processing and helpers  
 /hardware      Sensor and actuator integration logic  
 ```
 
